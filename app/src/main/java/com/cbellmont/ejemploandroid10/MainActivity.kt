@@ -18,13 +18,8 @@ class MainActivity : AppCompatActivity() {
 
         val list = MutableList(100) { pos -> "Elemento $pos"}
 
-        createRecyclerView(list)
-    }
-
-    private fun createRecyclerView(values: List<String>) {
-        // Aquií le decimos que ponga los elemento de arriba a abajo.
         recyclerView.layoutManager = LinearLayoutManager(this)
-
-        recyclerView.adapter = StringAdapter(values)
+        recyclerView.adapter = StringAdapter(list)
     }
+
 }
