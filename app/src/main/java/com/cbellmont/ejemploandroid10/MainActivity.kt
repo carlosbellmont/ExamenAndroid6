@@ -8,7 +8,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var adapter : StringAdapter
 
     lateinit var binding : ActivityMainBinding
 
@@ -18,13 +17,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val list = MutableList(100) { pos -> "Elemento $pos"}
+
         createRecyclerView(list)
     }
 
     private fun createRecyclerView(values: List<String>) {
-        adapter = StringAdapter(values)
-
+        // Aquií le decimos que ponga los elemento de arriba a abajo.
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = adapter
+
+        recyclerView.adapter = StringAdapter(values)
     }
 }

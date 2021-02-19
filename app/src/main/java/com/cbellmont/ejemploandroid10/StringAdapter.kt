@@ -17,14 +17,11 @@ class StringAdapter(var stringList : List<String>) : RecyclerView.Adapter<String
     }
 
     override fun getItemCount(): Int {
-        return stringList.size + 1
+        return stringList.size
     }
 
     override fun onBindViewHolder(holder: StringViewHolder, position: Int) {
-        if(position < stringList.size)
-            holder.textView.text = stringList[position]
-        else
-            holder.textView.text = "balblablalblablablaba"
+        holder.textView.text = stringList[position]
     }
 }
 
