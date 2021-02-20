@@ -22,6 +22,14 @@ class MainActivity : AppCompatActivity() {
         val adapter = StringAdapter(list)
         recyclerView.adapter = adapter
 
+        binding.bImpares.setOnClickListener {
+            adapter.stringList = adapter.stringList.filterIndexed { index: Int, s: String -> index % 2 == 1 }
+        }
+
+        binding.bPares.setOnClickListener {
+            adapter.stringList = adapter.stringList.filterIndexed { index: Int, s: String -> index % 2 == 0 }
+        }
     }
+
 
 }
